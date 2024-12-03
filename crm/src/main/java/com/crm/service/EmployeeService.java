@@ -46,9 +46,9 @@ public class EmployeeService {
       
         Optional<Employee> emp = employeeRepository.findById(id);
         Employee employee = emp.get();
-        employee.setName(dto.getName());
+     /*   employee.setName(dto.getName());
       employee.setEmailId(dto.getEmailId());
-      employee.setMobile(dto.getMobile());
+      employee.setMobile(dto.getMobile());*/
     employeeRepository.save(employee);
     return  mapToDto(employee);
 
@@ -71,6 +71,7 @@ EmployeeDto mapToDto(Employee employee){
 //        e.setName(dto.getName());
 //        e.setEmailId(dto.getEmailId());
 //        e.setMobile(dto.getMobile());
+        System.out.println("Hello");
 
      return  modelMapper.map(dto,Employee.class);
        // return e;
